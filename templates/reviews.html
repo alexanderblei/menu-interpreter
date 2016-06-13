@@ -1,0 +1,27 @@
+
+<div class="review_details"> 
+	Details:
+	<ul>
+	{% for review in reviews %}
+		<li>
+			<div>
+				<p>
+				{{ review["review_text"] }} 
+				</p>
+				<p>
+				Average Score: {{ review["average_score"]}}
+				</p>
+				<p>
+				{% for word in review["key_scoring_words"] %}
+					{{ word["keyword"]}},
+				{% endfor %}
+				</p>
+			</div>
+		</li> 
+	{% endfor %}
+	</ul> 
+</div>
+
+<div class="review_button">
+	Show Reviews
+</div>

@@ -1,0 +1,15 @@
+{% extends "layout.html" %}
+
+{% block body %}
+
+	<h1>Results</h1>
+
+	Restaurant: {{ restaurant }} <br>
+	Dish: {{ dish }} <br>
+	City: {{city }} <br>
+
+	Overall Average: {{average}} <br>
+
+	{% include "reviews.html" %}
+
+{% endblock %}
