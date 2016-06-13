@@ -79,11 +79,11 @@ def load_sentiment_words(file_name):
     flat_file_word_list=[]
     for column_number in range(0,word_match_spreadsheet.ncols):
         if column_number > 10:
-            word_score = 10-column_number
+            word_score = 10.00-column_number
         elif column_number < 8:
-            word_score = column_number+1
+            word_score = column_number+1.00
         else:
-            word_score=0
+            word_score=0.00
         word_list = word_match_spreadsheet.col_values(column_number)[1:]
         word_list =[word for word in word_list if word !="XXXXXXXXXX"]
         word_data = [{"keyword": word, "score": word_score} for word     in word_list]
@@ -99,7 +99,7 @@ def get_average_score(scoring_list):
             word_count=1
         else:
             aggregate_score+=scored_word['score']
-    return aggregate_score/word_count
+    return aggregate_score/float(word_count)
 
 def food_scoring_formula(matched_sentence_reviews):
     compiled_score_list = []
@@ -129,7 +129,7 @@ def yelp_scraper(restaurant, dish, city, logger):
 def yelp_scrape_raw(restaurant, dish, city, logger):
     search_url = get_search_url(city, restaurant)
     restaurant_page_url = get_restaurant_page_url(search_url)
-    review_descriptions = get_review_descriptions(restaurant_page_url,3)
+    review_descriptions = get_review_descriptions(restaurant_page_url,1)
     description_keywords = find_description_keywords(dish,review_descriptions)
     return description_keywords
 
@@ -137,7 +137,7 @@ def overall_average(all_reviews):
     aggregate_score = 0
     for review in all_reviews:
         aggregate_score += review["average_score"]
-    return aggregate_score/len(all_reviews)
+    return aggregate_score/float(len(all_reviews))
 
 
 
