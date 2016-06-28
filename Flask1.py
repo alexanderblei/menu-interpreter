@@ -24,8 +24,8 @@ def Home():
         reviews_dictionary = yelp_scraper(restaurant, dish, city, app.logger)
         average_score = overall_average(reviews_dictionary)
 
-        app.logger.debug(raw_key_sentences)
-        app.logger.debug(reviews_dictionary)
+#        app.logger.debug(raw_key_sentences)
+#        app.logger.debug(reviews_dictionary)
 
         return render_template("about2.html", restaurant=restaurant, city=city, dish=dish, reviews=reviews_dictionary, average=average_score)
 

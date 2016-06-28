@@ -121,7 +121,7 @@ def food_scoring_formula(matched_sentence_reviews):
 def yelp_scraper(restaurant, dish, city, logger):
     search_url = get_search_url(city, restaurant)
     restaurant_page_url = get_restaurant_page_url(search_url)
-    review_descriptions = get_review_descriptions(restaurant_page_url,5)
+    review_descriptions = get_review_descriptions(restaurant_page_url,10)
     description_keywords = find_description_keywords(dish,review_descriptions)
     score_food = food_scoring_formula(description_keywords)
     return score_food
