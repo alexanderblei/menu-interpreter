@@ -1,15 +1,32 @@
 {% extends "layout.html" %}
 
+<div>
+
 {% block body %}
 
 	<h1>Results</h1>
 
-	Restaurant: {{ restaurant }} <br>
-	Dish: {{ dish }} <br>
-	City: {{city }} <br>
+	<div class="list-group" "label label-default">
+		<h1><span class="label label-default">
+			Restaurant: {{ restaurant }} <br>
+		</span></h1>
+	</div>
+
+	<div class="list-group" "label label-default">
+		<h1><span class="label label-default">
+			Dish: {{ dish }} <br>
+		</span></h1>
+	</div>
+
+	<div class="list-group" "label label-default">
+		<h1><span class="label label-default">City: {{city }} <br>
+		</span></h1>
+	</div>
 
 	Overall Average: {{average}} <br>
 
 	{% include "reviews.html" %}
+
+</div>
 
 {% endblock %}

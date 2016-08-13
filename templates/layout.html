@@ -12,15 +12,38 @@
 </head>
 
 <body>
-    <div id="content">
-        {% block body %}
-        {% endblock %}
-    </div>
 
-    <div id="footer">
-        {% block ender %}
-        {% endblock %}
-    </div>
+<div class="back-drop"> </div>
+<div class="container-fluid">
+    <nav class="navbar navbar-inverse nav-height">
+        <div class="navbar-brand"><a class="home_format" href="\">Yelp Scraper</a>
+        </div>
+
+        <div class="collapse navbar-collapse" id="navcollapse">
+            <ul class="nav navbar-nav navbar-right">
+                <li class="active"><a href="\">Home</a></li>
+                <li><a href="\">Recent Searches</a></li>
+                <li><a href="\Excel">Request Reviews</a></li>
+                <li><a href="\">About</a></li>
+            </ul>
+        </div>
+    </nav>
+</div>
+
+<div class="container-fluid">
+    <div class="row">
+         <div id="content" class="col-md-6 col-xs-offset-3">
+            {% block body %}
+            {% endblock %}
+        </div>
+
+        <div id="footer">
+            {% block ender %}
+            {% endblock %}
+        </div>
+    </div>  
+</div>
+
 </body>
 
 </html>
